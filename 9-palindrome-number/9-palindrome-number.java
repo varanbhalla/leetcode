@@ -1,15 +1,15 @@
 class Solution {
     public boolean isPalindrome(int num) {
-        if (num == 0)
+        if (num == 0) 
             return true;
-        if (num < 0)
+        if (num < 0) 
             return false;
-        if (num % 10 == 0) 
+        if (num % 10 == 0)  // leading zeros
             return false;
         
         int reversed = 0;
+        int remainder = 0;
         int numCopy = num;
-        int remainder;
         while (num > 0) {
             remainder = num % 10;
             reversed = reversed * 10 + remainder;
@@ -18,7 +18,7 @@ class Solution {
         
         if (numCopy == reversed) {
             return true;
-        } 
+        }
         return false;
     }
 }
