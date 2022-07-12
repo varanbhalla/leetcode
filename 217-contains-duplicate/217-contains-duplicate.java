@@ -1,16 +1,17 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        boolean duplicateFound = false;
         Set<Integer> set = new HashSet();
         
         for (int element: nums) {
             if (set.contains(element)) {
-                duplicateFound = true;
-                return duplicateFound;
+                return true; // duplicate found
             } else {
                 set.add(element);
             }
         }
-        return duplicateFound;
+        return false; // duplicate not found
     }
 }
+
+// Time:  O(n) 
+// Space: O(n)
