@@ -14,6 +14,7 @@ class Solution {
         for (int i = 0; i < tLength; i++) {
             char ch = t.charAt(i);
             found[ch - 'a'] --; // decreament by 1
+            if(found[ch - 'a'] < 0) return false;
         }
         
         for (int element: found) {
