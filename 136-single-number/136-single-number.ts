@@ -1,4 +1,3 @@
-
 function singleNumber(nums: number[]): number {
     const seen: Set<number> = new Set()
     
@@ -6,11 +5,10 @@ function singleNumber(nums: number[]): number {
         if (seen.has(num)) {
             seen.delete(num);
         } else {
-            seen.add(num)
+            seen.add(num);
         }
     }
-    
-    for (let element of seen) {
-        return element;
+    for (let onlyLeftElement of seen) {
+        return onlyLeftElement;
     }
 };
