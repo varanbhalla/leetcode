@@ -1,5 +1,5 @@
 function fizzBuzz(n: number): string[] {
-    let resultList: string[] = [];
+    const resultList: string[] = [];
     
     for (let i = 1; i <= n; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
