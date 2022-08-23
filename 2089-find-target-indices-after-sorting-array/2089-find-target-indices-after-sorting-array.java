@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
         List<Integer> indicesList = new ArrayList();
