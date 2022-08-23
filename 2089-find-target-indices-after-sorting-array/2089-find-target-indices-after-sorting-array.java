@@ -6,6 +6,12 @@ class Solution {
             int element = nums[i];
             if (element == target) {
                 indicesList.add(i);
+                
+                if (i == nums.length-1) 
+                    continue;
+                int nextElement = nums[i+1];
+                if (element != nextElement) 
+                    break;
             }
         }
         return indicesList;
