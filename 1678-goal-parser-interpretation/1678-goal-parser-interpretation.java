@@ -1,9 +1,16 @@
 class Solution {
+    
+    private boolean isLastCharOfString(int start, int end) {
+        return start == end;
+    }
+    
     public String interpret(String command) {
         StringBuilder parserSB = new StringBuilder();
-        for (int i = 0; i < command.length(); i++) {
-            char currentChar = command.charAt(i);
-            char nextChar = (i == command.length() -1) ? command.charAt(i) : command.charAt(i+1);
+        int commandLength = command.length();
+        for (int i = 0; i < commandLength; i++) {
+            int currentChar = command.charAt(i);
+            int nextChar = (isLastCharOfString(i, commandLength-1) ? currentChar : command.charAt(i+1));
+            
             if (currentChar == '(' && nextChar == ')') {
                 parserSB.append('o');
                 i += 1;
@@ -14,6 +21,6 @@ class Solution {
                 parserSB.append('G');
             }
         }
-        return parserSB.toString();
+        return new String(parserSB);
     }
 }
