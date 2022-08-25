@@ -5,16 +5,33 @@ class Solution {
         while (num > 0) {
             int reminder = num % 10;
             digits[i] = reminder;
-            i++;
             num /= 10;
+            i++;
         }
-        Arrays.sort(digits);
-        int min = digits[0];
-        int secondMin = digits[1];
-        int thirdMin = digits[2];
-        int forthMin = digits[3];
-        int firstMinPair = min * 10 + thirdMin;
-        int secondMinPair = secondMin * 10 + forthMin;
+        int min = Integer.MAX_VALUE;
+        int secondMin = Integer.MAX_VALUE;
+        int thirdMin = Integer.MAX_VALUE;
+        int forthMin = Integer.MAX_VALUE;
+        for (int digit: digits) {
+            if (digit < min) {
+                forthMin = thirdMin;
+                thirdMin = secondMin;
+                secondMin = min;
+                min = digit;
+            } else if (digit < secondMin) {
+                forthMin = thirdMin;
+                thirdMin = secondMin;
+                secondMin = digit;
+            } else if (digit < thirdMin) {
+                forthMin = thirdMin;
+                thirdMin = digit;
+            } else if (digit < forthMin) {
+                forthMin = digit;
+            }
+        }
+        
+        int firstMinPair = Integer.parseInt(Integer.toString(min) + Integer.toString(thirdMin));
+        int secondMinPair = Integer.parseInt(Integer.toString(secondMin) + Integer.toString(forthMin));
         int minSum = firstMinPair + secondMinPair;
         return minSum;
     }
