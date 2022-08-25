@@ -1,10 +1,8 @@
 class Solution {
-    public int xorOperation(int numsLength, int start) {
+    public int xorOperation(int n, int start) {
         int XORSum = 0;
-        int[] nums = new int[numsLength];
-        for (int i = 0; i < numsLength; i++) {
-            nums[i] = start + (2 * i);
-            XORSum ^= nums[i];
+        for (int i = 0; i < n; i++) {
+            XORSum ^= start + (2 * i);
         }
         return XORSum;
     }
