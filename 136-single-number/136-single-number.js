@@ -4,7 +4,7 @@
  */
 var singleNumber = function(nums) {
     const hashSet = new Set();
-    nums.forEach((num, index) => {
+    nums.map((num, index) => {
         if (hashSet.has(num)) {
             hashSet.delete(num);
         } else {
