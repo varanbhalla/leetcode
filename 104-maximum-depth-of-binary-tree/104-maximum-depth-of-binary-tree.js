@@ -12,17 +12,15 @@
  */
 
 var maxDepth = function(root) {
-    if (root == null) {
+    if (root == null)
         return 0;
-    }
-    const leftTreeMaxDepth = maxDepth(root.left);
-    const rightTreeMaxDepth = maxDepth(root.right);
-    const currentNodeDepth = 1;
-    const treeMaxDepth = Math.max(leftTreeMaxDepth, rightTreeMaxDepth) + currentNodeDepth;
-    return treeMaxDepth;
     
+    const leftTreeDepth = maxDepth(root.left);
+    const rightTreeDepth = maxDepth(root.right);
+    const currentNodeDepth = 1;
+    const treeMaxDepth = Math.max(leftTreeDepth, rightTreeDepth) + currentNodeDepth;
+    return treeMaxDepth;
 };
-
 
 
 
