@@ -15,7 +15,7 @@ var reverseList = function(head) {
     let second = head;
     let backup = null;
     
-    while (second !== null) {
+    while (second != null) {
         backup = second.next;
         second.next = first;
         first = second;
@@ -23,6 +23,25 @@ var reverseList = function(head) {
     }
     return first;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
