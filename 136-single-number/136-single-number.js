@@ -4,8 +4,9 @@
  */
 
 var singleNumber = function(nums) {
-    let singleNumber = -1;
+    let singleNumberValue = -1;
     const set = new Set();
+    
     nums.forEach(element => {
         if (set.has(element)) {
             set.delete(element);
@@ -14,9 +15,9 @@ var singleNumber = function(nums) {
         }
     })
     set.forEach(leftElement => {
-        singleNumber = leftElement;
+        singleNumberValue = leftElement;
     })
-    return singleNumber;
+    return singleNumberValue;
 };
 
 
