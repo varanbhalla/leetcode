@@ -2,10 +2,48 @@
  * @param {number[]} nums
  * @return {number}
  */
+
 var singleNumber = function(nums) {
-    let result = 0;
-    nums.forEach((num, index) => {
-        result = result ^ num;
+    let singleNumber = -1;
+    const set = new Set();
+    nums.forEach(element => {
+        if (set.has(element)) {
+            set.delete(element);
+        } else {
+            set.add(element);
+        }
     })
-    return result;
+    set.forEach(leftElement => {
+        singleNumber = leftElement;
+    })
+    return singleNumber;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
